@@ -100,7 +100,8 @@ nav a:hover {
 .grey {
     background: #f2f2f2;
     max-width: none;
-    padding: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 .about-content {
@@ -163,6 +164,7 @@ nav a:hover {
 .project-card {
     flex: 1;
     border: 1px solid #bbb;
+    min-width: 0;
 }
 
 .project-card img {
@@ -252,9 +254,5 @@ footer {
 
     .section, .hero {
         padding: 50px;
-    }
-
-    #contact a {
-        font-size: 14px;
     }
 }

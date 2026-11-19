@@ -1,29 +1,33 @@
-var menuButton = document.getElementById('menu-button');
-var nav = document.getElementById('main-nav');
+const menuButton = document.getElementById('menu-button');
+const nav = document.getElementById('main-nav');
 
 menuButton.addEventListener('click', function () {
     nav.classList.toggle('open');
 });
 
-var workButton = document.getElementById('work-button');
-var studyButton = document.getElementById('study-button');
-var work = document.getElementById('work');
-var study = document.getElementById('study');
-
-workButton.addEventListener('click', function () {
-    workButton.classList.add('active');
-    studyButton.classList.remove('active');
-    work.classList.remove('hidden');
-    study.classList.add('hidden');
+nav.addEventListener('click', function () {
+    nav.classList.remove('open');
 });
 
-studyButton.addEventListener('click', function () {
-    studyButton.classList.add('active');
-    workButton.classList.remove('active');
-    study.classList.remove('hidden');
-    work.classList.add('hidden');
+const workTab = document.getElementById('work-tab');
+const studyTab = document.getElementById('study-tab');
+const workPanel = document.getElementById('work');
+const studyPanel = document.getElementById('study');
+
+workTab.addEventListener('click', function () {
+    workTab.classList.add('active');
+    studyTab.classList.remove('active');
+    workPanel.classList.remove('hidden');
+    studyPanel.classList.add('hidden');
+});
+
+studyTab.addEventListener('click', function () {
+    studyTab.classList.add('active');
+    workTab.classList.remove('active');
+    studyPanel.classList.remove('hidden');
+    workPanel.classList.add('hidden');
 });
 
 if (typeof AOS !== 'undefined') {
-    AOS.init();
+    AOS.init({ duration: 600, once: true });
 }
